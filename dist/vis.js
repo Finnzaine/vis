@@ -5,7 +5,7 @@
  * A dynamic, browser-based visualization library.
  *
  * @version 4.21.0
- * @date    2018-02-22
+ * @date    2018-03-01
  *
  * @license
  * Copyright (C) 2011-2017 Almende B.V, http://almende.com
@@ -21271,6 +21271,7 @@ var allOptions = {
   groupTemplate: { 'function': 'function' },
   visibleFrameTemplate: { string: string, 'function': 'function' },
   showTooltips: { 'boolean': bool },
+  tickBasicFontSize : { number: number, 'undefined': 'undefined' },
   tooltip: {
     followMouse: { 'boolean': bool },
     overflowMethod: { 'string': ['cap', 'flip'] },
@@ -35628,9 +35629,6 @@ Graph3d.prototype._redrawAxis = function () {
       yOffset;
 
   // TODO: get the actual rendered style of the containerElement
-  //ctx.font = this.containerElement.style.font;
-  var fontSize = this.tickBasicFontSize / this.camera.getArmLength() + 'px arial';
-  console.log(fontSize);
   ctx.font = this.tickBasicFontSize / this.camera.getArmLength() + 'px arial';
 
   // calculate the length for the short grid lines
@@ -37071,6 +37069,7 @@ var allOptions = {
     string: ['bar', 'bar-color', 'bar-size', 'dot', 'dot-line', 'dot-color', 'dot-size', 'line', 'grid', 'surface']
   },
   tooltip: { boolean: bool, 'function': 'function' },
+  tickBasicFontSize: { number: number, 'undefined': 'undefined' },
   tooltipStyle: {
     content: {
       color: { string: string },
